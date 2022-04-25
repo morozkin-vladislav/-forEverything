@@ -6,5 +6,20 @@
 </head>
 <body>
 
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Введите сообщение">
+        <input type="text" name="tag" placeholder="Tag">
+        <button type="submit">Добавить</button>
+    </form>
+</div>
+
+
+<div th:each="massage : ${massages}">
+    <p> ID: <b th:text="${massage.id}"/></p>
+    <p> TEXT: <b th:text="${massage.text}"/></p>
+    <p> TAG: <b th:text="${massage.tag}"/></p>
+</div>
+
 </body>
 </html>
