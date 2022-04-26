@@ -5,7 +5,11 @@
     <title>Main Page!</title>
 </head>
 <body>
-
+<div>
+    <form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign Out"/>
+    </form>
+</div>
 <div>
     <form method="post">
         <input type="text" name="text" placeholder="Введите сообщение">
@@ -14,11 +18,11 @@
     </form>
 </div>
 
-
+<div>Список сообщений</div>
 <div th:each="massage : ${massages}">
-    <p> ID: <b th:text="${massage.id}"/></p>
-    <p> TEXT: <b th:text="${massage.text}"/></p>
-    <p> TAG: <b th:text="${massage.tag}"/></p>
+    <p> TAG: <b th:text="${massage.tag}"/>
+        TEXT: <b th:text="${massage.text}"/>
+    </p>
 </div>
 
 </body>
